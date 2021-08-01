@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
+@mixin font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-playfair {
+  font-family: 'Playfair Display', serif
+}
+
+
+html, body {
+  margin: 0;
+  height: 100%;
+  min-width: 374px;
+  font-size: 18px;
+  color: #333333;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.material-icons.md-30 { 
+  font-size: 1.666667rem; 
+}
+
+h2 {
+  @include font-playfair;
+  font-size: 1.33rem;
+  font-weight: 700;
+  line-height: 1.77rem;
+  margin: 0;
+}
+
+.container {
+  width: #{"min(93.6%, 970px)"};
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.content {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+.description-recipe {
+  width: 58.72%;
+}
+.aside {
+  display: flex;
+  align-items: center;
+  width: 216px;
+  height: 367px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  &__list {
+    @include font-montserrat;
+    padding-left: 43px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 43px;
+  }
+  &__item {
+    display: flex;
+    column-gap: 10px;
+    &:first-child &__text b{
+      color: #F2994A;
+    }
+    &__icon {
+      color: #333333;
+    }
+    &:first-child &__icon {
+      color: #F2994A;
+    }
+    &__text {
+      display: flex;
+      row-gap: 4px;
+      flex-direction: column;
+      span {
+        font-size: .555556rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: .677222rem;
+        color: #BDBDBD;
+      }
+      b {
+        font-size: .777778rem;
+        font-weight: 500;
+        line-height: .948333rem;
+        color: #333333;
+      }  
+    }
+  }
+}
+.introduction {
+  margin-top: 5.04%;
+  &__title {
+    @include font-playfair;
+    font-weight: 700;
+    font-size: 48px;
+    color: #000;
+    line-height: 3.55rem;
+    margin: 0 0 12px;
+  }
+  &__text {
+    display: flex;
+    column-gap: 12px;
+    @include font-montserrat;
+    font-weight: 500;
+    font-size: 0.77rem;
+    line-height: 0.94rem;
+    color:#4F4F4F;
+  }
+  &__photo {
+    width: 100%;
+    margin-top: 4.437%;
+    margin-bottom: 4.953%;
+  }
+}
+
+.ingredients {
+  &__chapter {
+    display: inline-block;
+    @include font-playfair;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.33rem;
+    margin-top: 32px;
+    margin-bottom: 30px;
+    margin-top: 5.54%;
+    margin-bottom: 5.19%;
+  }
+  &__list {
+    li {
+      position: relative;
+      box-sizing: border-box;
+      @include font-montserrat;
+      font-size: 0.88rem;
+      line-height: 1.38rem;
+      margin-bottom: 13px;
+      padding-left: calc(21px + 2.94%); 
+      &::before {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        left:0;
+        vertical-align: middle;
+        margin-right: 17px;
+        height: 21px;
+        width: 21px;
+        border-radius: 4px;
+        border: 1px solid #828282;
+      }
+    }
+  }
+}
+
+.instructions {
+  margin-bottom: 6.45%;
+  &__title {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  &__step {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 15px;
+    margin-bottom: 31px;
+    p {
+      @include font-montserrat;
+      font-size: 0.88rem;
+      line-height: 1.11rem;
+      margin: 0;
+      width: 91.19%;
+    }
+  }
+  &__number {
+    display: inline-block;
+    height: 36px;
+    width: 36px;
+    border-radius: 6px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box;
+    background-color: #F2994A;
+    color: #fff;
+    @include font-playfair;
+    font-size: 1.33rem;
+    font-weight: 700;
+    line-height: 1.77rem;
+  }
+  &__source {
+    @include font-montserrat;
+    font-size: .888889rem;
+    font-weight: 400;
+    line-height: 1.333333rem;
+    color: #BDBDBD;
+    a {
+      text-decoration: none;
+      color: #BDBDBD;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  html, body {
+    font-size: 16px;
+  }
+  .content {
+    flex-direction: column;
+  }
+  .aside {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    margin-bottom: 8.522%;
+    &__list {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-left: 0;
+      row-gap: 20px;
+    }
+    &__item:first-child {
+      width: 100%;
+    }
+    
+  }
+  .introduction {
+    &__title {
+      font-size: 36px;
+    }
+  }
+  .description-recipe {
+    width: 100%;
+  }
+}
+
+.footer {
+  margin: 0 auto;
+  flex: 0 0 auto;
+  p {
+    color:#BDBDBD;
+    font-size: 0.75rem;
+    line-height: 0.625rem;
+  }
+}
+@media (max-width: 480px) {
+  h2 {
+    font-size: 18px;
+  }
+  .introduction {
+    &__title {
+      font-size: 24px;
+    }
+  }
+  .instructions__source {
+    font-size: 11px;
+  }
+}
